@@ -7,6 +7,6 @@ export const NavItems = [
     {
         id: 2,
         label: "User Details",
-        link: "/user-details/",
+        link: "/user-details/1",
     },
 ];

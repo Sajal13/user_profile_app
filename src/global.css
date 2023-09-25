@@ -15,6 +15,19 @@
         --background-end-rgb: 0, 0, 0;
     }
 }
+html {
+background: #EEF7FD;
+}
+
+h1,h2 {
+    font-family: 'Poppins', sans-serif;
+    color: #1e1e1e;
+    font-weight: 600;
+}
+p{
+    font-family: 'Roboto', sans-serif;
+    color: #2c2c2c;
+}
 .menu {
     position: fixed;
     right: 0px;

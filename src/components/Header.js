@@ -8,7 +8,7 @@ export default function Header() {
     const [navSize, setNavSize] = useState("h-24");
     const [backgroundColor, setBackgroundColor] = useState("bg-[#41436A]");
     const [navPosition, setNavPosition] = useState("sticky");
-
+    const [targetReached, setTargetReached] = useState(false);
     const changeOnScroll = () => {
         if (window.scrollY > 10) {
             setNavSize("h-20");
@@ -26,7 +26,6 @@ export default function Header() {
             window.removeEventListener("scroll", changeOnScroll);
         };
     });
-    const [targetReached, setTargetReached] = useState(false);
 
     const updateTarget = useCallback((e) => {
         if (e.matches) {
@@ -94,10 +93,18 @@ export default function Header() {
                 </nav>
                 <div className={`${targetReached ? "visible" : "hidden"}`}>
                     <button className={` py-1`} onClick={iconToggler}>
-                        <i className={`text-white text-3xl ${isOpen ? "hidden": "block"}`}>
+                        <i
+                            className={`text-white text-3xl ${
+                                isOpen ? "hidden" : "block"
+                            }`}
+                        >
                             <CgMenuRight />
                         </i>
-                        <i className={`text-white text-3xl ${isOpen ? "block": "hidden"}`}>
+                        <i
+                            className={`text-white text-3xl ${
+                                isOpen ? "block" : "hidden"
+                            }`}
+                        >
                             <CgClose />
                         </i>
                     </button>

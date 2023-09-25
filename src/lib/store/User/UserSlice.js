@@ -34,7 +34,7 @@ const userSlice = createSlice({
 });
 
 export const selectAllUsers = (state) => state.users.users.users;
-export const getUsersStatus = (state) => state.users.users.status;
+export const getUsersStatus = (state) => state.users.status;
 export const getUsersError = (state) => state.users.users.error;
 
 // Selector to get a user by their ID

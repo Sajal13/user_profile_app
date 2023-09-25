@@ -12,9 +12,8 @@ function App() {
             <Route path="/" element={<Layout />}>
                 <Route index element={<UserList />} />
 
-                <Route path="user-details">
+                <Route path="user-details/:userId">
                     <Route index element={<UserDetails />} />
-                    <Route path=':userId' element={<UserDetails />} />
                 </Route>
             </Route>
         </Routes>
