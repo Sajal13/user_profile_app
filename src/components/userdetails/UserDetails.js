@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
 import {
@@ -15,7 +15,7 @@ const UserDetails = () => {
         selectUserById(state, Number(userId))
     );
     let content;
-    if (userDetailsStatus == "loading") {
+    if (userDetailsStatus === "loading") {
         content = <Loading />;
     } else if (!userById) {
         content = <p className="text-3xl text-red-500">User Not Found</p>;

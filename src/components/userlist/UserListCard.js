@@ -9,7 +9,7 @@ export default function UserListCard({ user }) {
                     <img
                         className="w-24 h-24 mb-4 rounded-full shadow-lg bg-white"
                         src={user.image}
-                        alt="user image"
+                        alt="user"
                     />
                     <h5 className="mb-1 text-xl font-medium text-gray-900 dark:text-white">
                         {user.firstName} {user.lastName}

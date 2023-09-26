@@ -21,7 +21,7 @@ export default function UserDetailCard({ user }) {
             setIsNextDisable(false);
             setIsPrevDisable(false);
         }
-    }, [isPrevDisable, isNextDisable, Number(userId)]);
+    }, [isPrevDisable, isNextDisable,userId, allUser.length]);
     return (
         <>
             <div className="flex justify-between items-center">
@@ -116,7 +116,7 @@ export default function UserDetailCard({ user }) {
                         </div>
                     </div>
                     <div className="border border-gray-300 px-4 py-3 rounded-lg order-1 lg:order-2 lg:col-span-1 flex justify-center">
-                        <img src={user.image} alt="user image" className="" />
+                        <img src={user.image} alt="users" className="" />
                     </div>
                 </div>
             </div>

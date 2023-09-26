@@ -57,7 +57,7 @@ export default function Header() {
             // compatibility for browser that dont have removeEventListener
             return () => media.removeListener(updateTarget);
         }
-    });
+    }, [updateTarget]);
 
 
     const iconToggler = () => {
