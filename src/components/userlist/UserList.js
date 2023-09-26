@@ -9,7 +9,7 @@ const UserList = () => {
 
     let content;
 
-    if (status == "loading") {
+    if (status === "loading") {
         content = <Loading />;
     } else {
         content = (
