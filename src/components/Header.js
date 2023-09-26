@@ -57,8 +57,8 @@ export default function Header() {
             // compatibility for browser that dont have removeEventListener
             return () => media.removeListener(updateTarget);
         }
-        //eslint-disable-next-line
-    });
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, [targetReached]);
 
 
     const iconToggler = () => {
