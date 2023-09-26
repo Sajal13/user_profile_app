@@ -16,7 +16,11 @@
     }
 }
 html {
-background: #EEF7FD;
+background: #EEF7FD
+}
+body{
+    height:100%;
+    width: 100%;
 }
 
 h1,h2 {

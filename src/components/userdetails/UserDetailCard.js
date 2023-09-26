@@ -24,11 +24,8 @@ export default function UserDetailCard({ user }) {
     }, [isPrevDisable, isNextDisable,userId, allUser.length]);
     return (
         <>
-            <div className="flex justify-between items-center">
-                <div className="text-3xl md:text-4xl lg:text-5xl text-[#111] py-4 md:py-5 lg:py-6">
-                {user.firstName} {user.maidenName} {user.lastName}
-                </div>
-                <div className="py-4 md:py-5 lg:py-6 flex items-center">
+            <div className="lg:flex lg:justify-between lg:items-center">
+            <div className="py-4 md:py-5 lg:py-6 flex justify-between items-center lg:order-2">
                     <div>
                         <Link
                             to={`/user-details/${
@@ -50,6 +47,9 @@ export default function UserDetailCard({ user }) {
                             <Button label={"Next"} isDisable={isNextDisable} />
                         </Link>
                     </div>
+                </div>
+                <div className="text-3xl md:text-4xl lg:text-5xl text-[#111] py-4 md:py-5 lg:py-6">
+                {user.firstName} {user.maidenName} {user.lastName}
                 </div>
             </div>
             <div>
