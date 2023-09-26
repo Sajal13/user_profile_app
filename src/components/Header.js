@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useCallback } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { CgClose, CgMenuRight } from "react-icons/cg";
 import { NavItems } from "../lib/constants/constants";
 
 export default function Header() {
-    
+    const { pathname } = useLocation()
     const [isOpen, setIsOpen] = useState(false);
     const [navSize, setNavSize] = useState("h-24");
     const [backgroundColor, setBackgroundColor] = useState("bg-[#41436A]");
@@ -23,13 +23,16 @@ export default function Header() {
         }
     };
 
-
     useEffect(() => {
         window.addEventListener("scroll", changeOnScroll);
-        return () => {
-            window.removeEventListener("scroll", changeOnScroll);
-        };
+        return () =>{
+            window.removeEventListener("scroll", changeOnScroll)
+        }
     });
+
+    useEffect(() =>{
+        window.scrollTo(0, 0)
+    }, [pathname])
 
     const updateTarget = useCallback((e) => {
         if (e.matches) {
@@ -60,7 +63,6 @@ export default function Header() {
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [targetReached]);
 
-
     const iconToggler = () => {
         setIsOpen(!isOpen);
         setTargetReached(!targetReached);
@@ -88,7 +90,12 @@ export default function Header() {
                         }`}
                     >
                         {NavItems.map((item) => (
-                            <Link to={item.link} key={item.id} className="">
+                            <Link
+                                to={item.link}
+                                key={item.id}
+                                className=""
+                                onClick={() => setIsOpen(!isOpen)}
+                            >
                                 {/* {matchPath({path:item.link}, pathname)} */}
                                 <div className="">
                                     <p className="pl-10 py-4 text-white font-semibold">

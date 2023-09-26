@@ -6,11 +6,11 @@ import {
 
 export const apiSlice = createApi({
     reducerPath: "api",
+    refetchOnFocus: true,
     baseQuery:fetchBaseQuery({
-        baseUrl:'http://localhost:3500'
+        baseUrl:'https://dummyjson.com/'
     }),
     tagTypes:['User'],
     endpoints: (builder)=>({
-        
     })
 })
