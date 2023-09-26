@@ -17,37 +17,40 @@ export default function UserDetailCard({ user }) {
         } else if (Number(userId) === allUser.length) {
             setIsNextDisable(true);
             return;
-        }else{
+        } else {
             setIsNextDisable(false);
-            setIsPrevDisable(false)
+            setIsPrevDisable(false);
         }
-    },[isPrevDisable, isNextDisable, Number(userId)]);
+    }, [isPrevDisable, isNextDisable, Number(userId)]);
     return (
         <>
-            <div className="py-4 md:py-5 lg:py-6 flex justify-between items-center">
-                <div>
-                    <Link
-                        to={`/user-details/${
-                            Number(userId) > 1 ? Number(userId) - 1 : 1
-                        }`}
-                    >
-                        <Button label={"Prev"} isDisable={isPrevDisable} />
-                    </Link>
-                </div>
-                <div>
-                    <Link
-                        to={`/user-details/${
-                            Number(userId) < allUser.length
-                                ? Number(userId) + 1
-                                : allUser.length
-                        }`}
-                    >
-                        <Button label={"Next"} isDisable={isNextDisable} />
-                    </Link>
-                </div>
-            </div>
-            <div className="text-3xl md:text-4xl lg:text-5xl text-[#111] py-4 md:py-5 lg:py-6">
+            <div className="flex justify-between items-center">
+                <div className="text-3xl md:text-4xl lg:text-5xl text-[#111] py-4 md:py-5 lg:py-6">
                 {user.firstName} {user.maidenName} {user.lastName}
+                </div>
+                <div className="py-4 md:py-5 lg:py-6 flex items-center">
+                    <div>
+                        <Link
+                            to={`/user-details/${
+                                Number(userId) > 1 ? Number(userId) - 1 : 1
+                            }`}
+                            className="mr-4 lg:mr-6"
+                        >
+                            <Button label={"Prev"} isDisable={isPrevDisable} />
+                        </Link>
+                    </div>
+                    <div>
+                        <Link
+                            to={`/user-details/${
+                                Number(userId) < allUser.length
+                                    ? Number(userId) + 1
+                                    : allUser.length
+                            }`}
+                        >
+                            <Button label={"Next"} isDisable={isNextDisable} />
+                        </Link>
+                    </div>
+                </div>
             </div>
             <div>
                 <div className="grid grid-cols-1 lg:grid-cols-4 gap-7 place-content-between ">

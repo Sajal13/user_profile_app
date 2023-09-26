@@ -4,11 +4,13 @@ import { CgClose, CgMenuRight } from "react-icons/cg";
 import { NavItems } from "../lib/constants/constants";
 
 export default function Header() {
+    
     const [isOpen, setIsOpen] = useState(false);
     const [navSize, setNavSize] = useState("h-24");
     const [backgroundColor, setBackgroundColor] = useState("bg-[#41436A]");
     const [navPosition, setNavPosition] = useState("sticky");
     const [targetReached, setTargetReached] = useState(false);
+
     const changeOnScroll = () => {
         if (window.scrollY > 10) {
             setNavSize("h-20");
@@ -20,6 +22,8 @@ export default function Header() {
             setNavPosition("sticky");
         }
     };
+
+
     useEffect(() => {
         window.addEventListener("scroll", changeOnScroll);
         return () => {
@@ -54,6 +58,8 @@ export default function Header() {
             return () => media.removeListener(updateTarget);
         }
     });
+
+
     const iconToggler = () => {
         setIsOpen(!isOpen);
         setTargetReached(!targetReached);
@@ -82,6 +88,7 @@ export default function Header() {
                     >
                         {NavItems.map((item) => (
                             <Link to={item.link} key={item.id} className="">
+                                {/* {matchPath({path:item.link}, pathname)} */}
                                 <div className="">
                                     <p className="pl-10 py-4 text-white font-semibold">
                                         {item.label}
